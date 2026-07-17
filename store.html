@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - UK Peptides</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <meta property="og:title" content="UK Peptides | Trusted Research Compounds">
+    <meta property="og:description" content="The UK's most trusted performance and research compound retailer. Lab tested batches. Fast, reliable dispatch.">
+    <meta property="og:image" content="https://ukpeptides-domain.vercel.app/logo.jpg">
+    <meta property="og:url" content="https://ukpeptides-domain.vercel.app/">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://ukpeptides-domain.vercel.app/logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0B0F19',
+                        surface: '#131A2A',
+                        borderline: '#1E293B',
+                        accent: '#D4AF37', /* Premium Champagne Gold */
+                        accentHover: '#FDE047'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0B0F19; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #0B0F19 inset !important;
+            -webkit-text-fill-color: white !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { display: flex; width: max-content; animation: marquee 15s linear infinite; }
+        .animate-marquee:hover { animation-play-state: paused; }
+
+        .filter-active { background-color: #D4AF37; color: #000; border-color: #D4AF37; }
+    </style>
+</head>
+<body class="text-white min-h-screen relative bg-dark">
+
+    <div class="h-1.5 w-full bg-accent absolute top-0 left-0"></div>
+
+    <header class="flex justify-between items-center p-6 pt-10 max-w-5xl mx-auto border-b border-borderline">
+        
+        <a href="index.html" class="hover:opacity-80 transition">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-widest uppercase font-heading leading-none">UK PEPTIDES</h1>
+            <div class="flex items-center justify-start gap-2 mt-1">
+                <div class="h-[1px] bg-gray-600 w-8"></div>
+                <span class="text-gray-400 text-[0.55rem] tracking-[0.25em] uppercase font-medium">UK PEPS</span>
+                <div class="h-[1px] bg-gray-600 w-8"></div>
+            </div>
+        </a>
+
+        <div class="flex items-center space-x-6">
+            
+            <a href="index.html" class="text-xs font-bold tracking-widest uppercase text-gray-400 hover:text-accent transition flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="hidden sm:inline">Home</span>
+            </a>
+
+            <div class="bg-surface border border-borderline rounded-md px-3 py-1 items-center gap-2 hidden md:flex">
+                <div class="w-1.5 h-1.5 rounded-full bg-accent opacity-80"></div>
+                <span class="text-accent text-[0.6rem] font-bold tracking-widest uppercase">UK TRUSTED SOURCE</span>
+            </div>
+            
+            <button onclick="openCartModal()" class="relative text-gray-300 hover:text-white transition">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                <span id="cartBadge" class="absolute -top-1.5 -right-2 bg-accent text-black text-[0.65rem] font-bold px-1.5 py-0.5 rounded-full">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="bg-surface border-b border-borderline text-gray-300 py-3 overflow-hidden whitespace-nowrap relative">
+        <div class="animate-marquee">
+            <div class="flex space-x-12 px-6 text-xs font-bold tracking-[0.2em] items-center">
+                <span><span class="text-accent">★</span> DISCOUNT ON 3 × GHK-CU NOW LIVE</span>
+                <span><span class="text-accent">★</span> FAST UK DISPATCH</span>
+                <span><span class="text-accent">★</span> ALL BATCHES LAB TESTED</span>
+            </div>
+            <div class="flex space-x-12 px-6 text-xs font-bold tracking-[0.2em] items-center" aria-hidden="true">
+                <span><span class="text-accent">★</span> DISCOUNT ON 3 × GHK-CU NOW LIVE</span>
+                <span><span class="text-accent">★</span> FAST UK DISPATCH</span>
+                <span><span class="text-accent">★</span> ALL BATCHES LAB TESTED</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-4xl mx-auto p-6 mt-6">
+        
+        <div class="flex items-center justify-between mb-8 flex-wrap gap-4 border-b border-borderline pb-6">
+            <h2 class="text-sm tracking-[0.2em] text-gray-500 font-heading uppercase font-bold">RESEARCH CATALOG</h2>
+            
+            <div class="flex space-x-2 overflow-x-auto no-scrollbar pb-2 md:pb-0 w-full md:w-auto">
+                <button onclick="filterProducts('all', this)" class="filter-btn filter-active border border-accent px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">All Products</button>
+                <button onclick="filterProducts('fat-loss', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Fat Loss</button>
+                <button onclick="filterProducts('healing', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Healing / Recovery</button>
+                <button onclick="filterProducts('muscle', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Muscle Building</button>
+                <button onclick="filterProducts('tanning', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Tanning</button>
+            </div>
+        </div>
+
+        <div id="productGrid">
+            
+            <!-- ============================== -->
+            <!-- FAT LOSS SECTION               -->
+            <!-- ============================== -->
+            <div class="category-header w-full mt-4 mb-8" data-category="fat-loss">
+                <div class="bg-white text-black inline-block px-6 py-2 rounded font-heading font-extrabold text-xl uppercase tracking-widest shadow-lg">
+                    🔥 Fat Loss & Metabolism
+                </div>
+            </div>
+
+            <!-- Tesamorelin 10mg -->
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="fat-loss">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Tesamorelin 10mg</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Fat Loss</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Synthetic analogue of GHRH. Highly documented in clinical research for reducing visceral adipose tissue and promoting muscle growth.</p>
+                        <p class="font-bold text-lg text-accent">£30</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <div class="flex items-center space-x-4 w-full justify-end">
+                        <div class="flex items-center border border-borderline bg-surface rounded">
+                            <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
+                            <span class="px-4 text-sm font-bold qty-value">1</span>
+                            <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
+                        </div>
+                        <button onclick="addToBasket('Tesamorelin 10mg', 30, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retatrutide 40mg Pen -->
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="fat-loss">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <img src="retatrutide.jpg" alt="Retatrutide 40mg Pen" class="w-24 h-24 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Retatrutide 40mg Pen</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Fat Loss</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Maximum-strength high-purity triple agonist compound for advanced analytical research.</p>
+                        <p class="font-bold text-lg text-accent">£150</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <div class="flex items-center space-x-4 w-full justify-end">
+                        <div class="flex items-center border border-borderline bg-surface rounded">
+                            <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
+                            <span class="px-4 text-sm font-bold qty-value">1</span>
+                            <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
+                        </div>
+                        <button onclick="addToBasket('Retatrutide 40mg Pen', 150, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retatrutide 40mg VIAL -->
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="fat-loss">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <img src="retatrutide.jpg" alt="Retatrutide 40mg Vial" class="w-24 h-24 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Retatrutide 40mg (Vial)</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Fat Loss</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">High-purity triple agonist compound in a lyophilized vial format. Enhances insulin secretion and increases energy expenditure.</p>
+                        <p class="font-bold text-lg text-accent">£140</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <div class="flex items-center space-x-4 w-full justify-end">
+                        <div class="flex items-center border border-borderline bg-surface rounded">
+                            <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
+                            <span class="px-4 text-sm font-bold qty-value">1</span>
+                            <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
+                        </div>
+                        <button onclick="addToBasket('Retatrutide 40mg (Vial)', 140, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOTS-c 40mg -->
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="fat-loss">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">MOTS-c 40mg</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Fat Loss</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Mitochondrial-derived peptide known to promote metabolic homeostasis. Researched for mimicking the effects of exercise.</p>
+                        <p class="font-bold text-lg text-accent">£35</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <div class="flex items-center space-x-4 w-full justify-end">
+                        <div class="flex items-center border border-borderline bg-surface rounded">
+                            <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
+                            <span class="px-4 text-sm font-bold qty-value">1</span>
+                            <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
+                        </div>
+                        <button onclick="addToBasket('MOTS-c 40mg', 35, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================== -->
+            <!-- HEALING / RECOVERY SECTION     -->
+            <!-- ============================== -->
+            <div class="category-header w-full mt-10 mb-8" data-category="healing">
+                <div class="bg-white text-black inline-block px-6 py-2 rounded font-heading font-extrabold text-xl uppercase tracking-widest shadow-lg">
+                    🧬 Healing & Recovery
+                </div>
+            </div>
+
+            <!-- GHK-Cu 50mg Bottle -->
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="healing">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <img src="glow_ghk.jpg" alt="GHK-Cu 50mg" class="w-24 h-16 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">GHK-Cu 50mg Bottle</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Healing / Recovery</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Copper-binding tripeptide in a single 50mg presentation. Researched extensively for skin regeneration and tissue remodelling.</p>
+                        <p class="font-bold text-lg text-accent">£30</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <div class="flex items-center space-x-4 w-full justify-end">
+                        <div class="flex items-center border border-borderline bg-surface rounded">
+                            <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
+                            <span class="px-4 text-sm font-bold qty-value">1</span>
+                            <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
+                        </div>
+                        <button onclick="addToBasket('GHK-Cu 50mg', 30, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BPC-157 10mg -->
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="healing">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">BPC-157 10mg</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Healing / Recovery</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Body Protection Compound. Extensively researched for its potential to accelerate healing of tendons, muscles, and the nervous system.</p>
+                        <p class="font-bold text-lg text-accent">£20</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <div class="flex items-center space-x-4 w-full justify-end">
+                        <div class="flex items-center border border-borderline bg-surface rounded">
+                            <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
+                            <span class="px-4 text-sm font-bold qty-value">1</span>
+                            <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
+                        </div>
+                        <button onclick="addToBasket('BPC-157 10mg', 20, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TB-500 (OOS) -->
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8 opacity-70" data-category="healing">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">TB-500</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Healing / Recovery</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Synthetic version of the naturally occurring peptide Thymosin Beta-4. Researched for tissue repair and anti-inflammatory properties.</p>
+                        <p class="font-bold text-lg text-gray-500 line-through">£TBA</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <button disabled class="bg-surface text-red-500 font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded w-full md:w-auto cursor-not-allowed border border-borderline">OUT OF STOCK (RESTOCKING)</button>
+                </div>
+            </div>
+
+
+            <!-- ============================== -->
+            <!-- MUSCLE BUILDING SECTION        -->
+            <!-- ============================== -->
+            <div class="category-header w-full mt-10 mb-8" data-category="muscle">
+                <div class="bg-white text-black inline-block px-6 py-2 rounded font-heading font-extrabold text-xl uppercase tracking-widest shadow-lg">
+                    💪 Muscle Building
+                </div>
+            </div>
+
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8 opacity-70" data-category="muscle">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Ipamorelin</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Muscle Building</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Highly selective growth hormone secretagogue. Studied for its ability to stimulate GH release without significantly elevating cortisol.</p>
+                        <p class="font-bold text-lg text-gray-500 line-through">£TBA</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <button disabled class="bg-surface text-red-500 font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded w-full md:w-auto cursor-not-allowed border border-borderline">OUT OF STOCK (RESTOCKING)</button>
+                </div>
+            </div>
+
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8 opacity-70" data-category="muscle">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">CJC-1295</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Muscle Building</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Tetrasubstituted peptide analogue of GHRH. Researched for its ability to increase plasma GH and IGF-1 levels steadily.</p>
+                        <p class="font-bold text-lg text-gray-500 line-through">£TBA</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <button disabled class="bg-surface text-red-500 font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded w-full md:w-auto cursor-not-allowed border border-borderline">OUT OF STOCK (RESTOCKING)</button>
+                </div>
+            </div>
+
+
+            <!-- ============================== -->
+            <!-- TANNING SECTION                -->
+            <!-- ============================== -->
+            <div class="category-header w-full mt-10 mb-8" data-category="tanning">
+                <div class="bg-white text-black inline-block px-6 py-2 rounded font-heading font-extrabold text-xl uppercase tracking-widest shadow-lg">
+                    ☀️ Tanning & Melanogenesis
+                </div>
+            </div>
+
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="tanning">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <img src="mt2.jpg" alt="MT-2" class="w-24 h-16 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Melanotan-2 (MT-2)</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Tanning</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Synthetic analogue of the peptide hormone α-melanocyte-stimulating hormone (α-MSH) used in melanogenesis research.</p>
+                        <div class="flex items-center gap-2">
+                            <p class="font-bold text-sm text-gray-500 line-through">£50</p>
+                            <p class="font-bold text-lg text-accent">£39.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <div class="flex items-center space-x-4 w-full justify-end">
+                        <div class="flex items-center border border-borderline bg-surface rounded">
+                            <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
+                            <span class="px-4 text-sm font-bold qty-value">1</span>
+                            <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
+                        </div>
+                        <button onclick="addToBasket('MT-2', 39.99, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="tanning">
+                <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
+                    <img src="mt2.jpg" alt="MT-2 10mg" class="w-24 h-16 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <div>
+                        <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Melanotan-2 (MT-2) 10mg</h3>
+                        <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Tanning</span>
+                        <p class="text-gray-400 text-xs leading-relaxed max-w-md mb-3">Synthetic analogue of the peptide hormone α-melanocyte-stimulating hormone (α-MSH) used in melanogenesis research.</p>
+                        <p class="font-bold text-lg text-accent">£30</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
+                    <div class="flex items-center space-x-4 w-full justify-end">
+                        <div class="flex items-center border border-borderline bg-surface rounded">
+                            <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
+                            <span class="px-4 text-sm font-bold qty-value">1</span>
+                            <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
+                        </div>
+                        <button onclick="addToBasket('MT-2 10mg', 30, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex flex-col justify-center items-center mt-12 mb-20 space-y-4">
+            <p class="text-[#4a4d54] text-xs text-center font-semibold">
+                © 2026 UK Peptides. All rights reserved. <br>Products for research purposes only.
+            </p>
+        </div>
+    </main>
+
+    <!-- BASKET MODAL -->
+    <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm hidden z-50 flex justify-center items-start pt-10 md:pt-16 px-4 overflow-y-auto">
+        <div class="bg-surface border border-borderline w-full max-w-2xl rounded-lg shadow-2xl mb-10 overflow-hidden relative">
+            <button onclick="closeCartModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white font-bold text-xl transition">&times;</button>
+            <div class="p-6 md:p-8">
+                <div class="flex items-center gap-3 mb-8">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <h2 class="font-heading font-extrabold text-2xl tracking-widest uppercase text-white">BASKET</h2>
+                </div>
+                <div id="cartItemsContainer" class="space-y-2 mb-8 min-h-[100px]"></div>
+                <div class="border-t border-borderline pt-6 mt-6">
+                    <div class="flex justify-between items-end mb-8">
+                        <span class="font-heading font-bold text-xl tracking-widest text-gray-400 uppercase">TOTAL</span>
+                        <span id="cartTotalUI" class="font-bold text-3xl text-white">£0.00</span>
+                    </div>
+                    <button id="btnProceedCheckout" onclick="proceedToCheckout()" class="w-full bg-dark border border-borderline text-white py-4 rounded font-heading font-bold text-lg tracking-widest hover:bg-borderline hover:border-accent transition uppercase">CHECKOUT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm hidden z-50 flex justify-center items-start pt-10 md:pt-16 px-4 overflow-y-auto">
+        <div class="bg-surface border border-borderline w-full max-w-md rounded-lg shadow-2xl mb-10 overflow-hidden relative">
+            <button onclick="closeCheckout()" class="absolute top-4 right-4 text-gray-500 hover:text-white font-bold text-xl transition">&times;</button>
+            <div id="checkoutFormStep" class="p-6 md:p-8">
+                <h2 class="font-heading font-bold text-2xl tracking-wide mb-2 uppercase">Secure Checkout</h2>
+                <div class="space-y-3 border-b border-borderline pb-4 mb-6 bg-dark p-4 rounded-md">
+                    <div class="flex justify-between text-gray-300 text-sm"><span id="checkoutItemName" class="truncate max-w-[200px]">Cart Items</span><span id="checkoutItemPrice" class="font-semibold text-white">£0.00</span></div>
+                    <div class="flex justify-between text-gray-500 text-sm"><span id="shippingLabel">UK DOMESTIC SHIPPING</span><span id="shippingCost">£5.00</span></div>
+                    <div class="flex justify-between text-white text-lg pt-2 border-t border-borderline mt-2"><span class="font-heading font-bold tracking-wide">TOTAL</span><span id="checkoutTotal" class="font-bold text-accent">£0.00</span></div>
+                </div>
+                <form onsubmit="handleOrderSubmission(event)" class="space-y-4">
+                    <input type="text" placeholder="FULL NAME" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
+                    <input type="text" placeholder="ADDRESS" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="CITY" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
+                        <input type="text" placeholder="POSTCODE" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
+                    </div>
+                    <input type="tel" placeholder="PHONE" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
+                    
+                    <select id="shippingSelect" onchange="updateShipping()" class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent cursor-pointer appearance-none">
+                        <option value="5">UK DOMESTIC SHIPPING - £5.00</option>
+                        <option value="15">INTERNATIONAL SHIPPING - £15.00</option>
+                    </select>
+
+                    <button type="submit" class="w-full bg-accent text-black py-4 rounded font-heading font-bold text-lg tracking-widest hover:bg-accentHover mt-4 transition">PLACE ORDER</button>
+                </form>
+            </div>
+            
+            <!-- PAYMENT INTEGRATION PLACEHOLDER -->
+            <div id="bankDetailsStep" class="hidden p-6 md:p-8 text-center">
+                <h3 class="text-3xl font-heading font-extrabold uppercase tracking-tight mb-2">Payment Setup</h3>
+                <p class="text-sm text-gray-400 mb-8">Payment integration is currently pending configuration.</p>
+                
+                <div class="bg-dark border border-borderline p-8 rounded text-center space-y-4 mb-8">
+                    <svg class="w-12 h-12 text-accent mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    <h4 class="font-bold text-xl text-white">Gateway Placeholder</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">This container is ready for Stripe, PayPal, or Crypto payment integration once the final site setup is complete.</p>
+                    
+                    <div class="pt-4 border-t border-borderline mt-4">
+                        <p class="text-[0.65rem] text-gray-500 font-bold tracking-wider uppercase">Amount Pending</p>
+                        <p id="bankTotal" class="font-bold text-2xl text-accent">£0.00</p>
+                    </div>
+                </div>
+
+                <button onclick="closeCheckoutAndReset()" class="w-full bg-accent text-black py-4 rounded font-heading font-bold text-lg tracking-widest hover:bg-accentHover transition uppercase">Return to Store</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function filterProducts(category, btnElement) {
+        const allBtns = document.querySelectorAll('.filter-btn');
+        allBtns.forEach(btn => {
+            btn.classList.remove('filter-active', 'border-accent', 'text-black', 'bg-accent');
+            btn.classList.add('text-gray-400', 'border-borderline', 'bg-surface');
+        });
+        
+        btnElement.classList.add('filter-active', 'border-accent', 'text-black', 'bg-accent');
+        btnElement.classList.remove('text-gray-400', 'border-borderline', 'bg-surface');
+
+        const products = document.querySelectorAll('.product-card');
+        const headers = document.querySelectorAll('.category-header');
+
+        if (category === 'all') {
+            products.forEach(product => product.style.display = 'flex');
+            headers.forEach(header => header.style.display = 'block');
+        } else {
+            products.forEach(product => {
+                if (product.dataset.category === category) {
+                    product.style.display = 'flex';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+            headers.forEach(header => {
+                if (header.dataset.category === category) {
+                    header.style.display = 'block';
+                } else {
+                    header.style.display = 'none';
+                }
+            });
+        }
+    }
+
+    let cart = JSON.parse(localStorage.getItem('ukpepsCart')) || [];
+    let currentOrderTotal = '£0.00';
+    const cartModal = document.getElementById('cartModal');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const formStep = document.getElementById('checkoutFormStep');
+    const bankStep = document.getElementById('bankDetailsStep');
+
+    function updateQty(btn, change) {
+        const qtySpan = btn.parentElement.querySelector('.qty-value');
+        let currentQty = parseInt(qtySpan.innerText);
+        let newQty = currentQty + change;
+        if (newQty < 1) newQty = 1;
+        qtySpan.innerText = newQty;
+    }
+
+    function addToBasket(productName, price, btn) {
+        const qtySpan = btn.parentElement.querySelector('.qty-value');
+        const qty = parseInt(qtySpan.innerText);
+        const existingItem = cart.find(item => item.name === productName);
+        if (existingItem) { existingItem.qty += qty; } else { cart.push({ name: productName, price: price, qty: qty }); }
+        qtySpan.innerText = '1';
+        updateCartUI();
+        openCartModal();
+    }
+
+    function removeFromCart(index) { cart.splice(index, 1); updateCartUI(); }
+
+    function updateCartUI() {
+        localStorage.setItem('ukpepsCart', JSON.stringify(cart));
+        
+        const cartContainer = document.getElementById('cartItemsContainer');
+        const cartBadge = document.getElementById('cartBadge');
+        const checkoutBtn = document.getElementById('btnProceedCheckout');
+        const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+        cartBadge.innerText = totalItems;
+        cartContainer.innerHTML = '';
+        let subtotal = 0;
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '<p class="text-gray-500 text-sm italic py-4">Your basket is currently empty.</p>';
+            document.getElementById('cartTotalUI').innerText = '£0.00';
+            checkoutBtn.disabled = true; checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            return;
+        }
+
+        checkoutBtn.disabled = false; checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        cart.forEach((item, index) => {
+            const itemTotal = item.price * item.qty;
+            subtotal += itemTotal;
+            cartContainer.innerHTML += `<div class="flex justify-between items-center border-b border-borderline py-4"><div><p class="text-white text-lg font-light">${item.name}</p><p class="text-xs text-gray-500 mt-1">£${item.price.toFixed(2)} × ${item.qty}</p></div><div class="flex items-center gap-6"><span class="font-semibold text-white">£${itemTotal.toFixed(2)}</span><button onclick="removeFromCart(${index})" class="text-gray-600 hover:text-red-500 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button></div></div>`;
+        });
+        document.getElementById('cartTotalUI').innerText = `£${subtotal.toFixed(2)}`;
+    }
+
+    function openCartModal() { cartModal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeCartModal() { cartModal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+
+    let currentShippingCost = 5.00;
+
+    function updateShipping() {
+        const select = document.getElementById('shippingSelect');
+        currentShippingCost = parseFloat(select.value);
+        document.getElementById('shippingLabel').innerText = select.options[select.selectedIndex].text.split(' -')[0];
+        document.getElementById('shippingCost').innerText = `£${currentShippingCost.toFixed(2)}`;
+        
+        let subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+        const finalTotal = subtotal + currentShippingCost;
+        
+        document.getElementById('checkoutTotal').innerText = `£${finalTotal.toFixed(2)}`;
+        document.getElementById('bankTotal').innerText = `£${finalTotal.toFixed(2)}`;
+        currentOrderTotal = `£${finalTotal.toFixed(2)}`;
+    }
+
+    function proceedToCheckout() {
+        if (cart.length === 0) return;
+        closeCartModal();
+        let subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+        
+        let summaryText = cart.map(item => `${item.qty}x ${item.name}`).join(', ');
+        if (summaryText.length > 30) summaryText = summaryText.substring(0, 27) + '...';
+        
+        document.getElementById('checkoutItemName').innerText = summaryText;
+        document.getElementById('checkoutItemPrice').innerText = `£${subtotal.toFixed(2)}`;
+        
+        document.getElementById('shippingSelect').value = "5"; 
+        updateShipping(); 
+        
+        openCheckout();
+    }
+
+    function openCheckout() { checkoutModal.classList.remove('hidden'); formStep.classList.remove('hidden'); bankStep.classList.add('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeCheckout() { checkoutModal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+    function closeCheckoutAndReset() { closeCheckout(); setTimeout(() => { formStep.classList.remove('hidden'); }, 500); }
+    function generateOrderRef() { return `UKP-${Math.floor(1000 + Math.random() * 9000)}`; }
+
+    async function handleOrderSubmission(e) {
+        e.preventDefault(); 
+        const uniqueRef = generateOrderRef();
+        const inputs = e.target.querySelectorAll('input');
+        const cartSummaryString = cart.map(item => `${item.qty}x ${item.name}`).join(' | ');
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'PROCESSING...'; submitBtn.disabled = true;
+
+        try {
+            // For now, bypass the API submit and go straight to the payment gateway placeholder
+            setTimeout(() => {
+                cart = []; 
+                updateCartUI(); 
+                formStep.classList.add('hidden'); 
+                bankStep.classList.remove('hidden'); 
+            }, 800);
+            
+            /* Uncomment when payment logic is sorted:
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    access_key: "YOUR_ACCESS_KEY_HERE",
+                    subject: `🚨 New UK Peptides Order: ${uniqueRef}`,
+                    Order_Reference: uniqueRef, Total_Amount: currentOrderTotal, Items: cartSummaryString,
+                    Shipping_Method: document.getElementById('shippingLabel').innerText,
+                    Customer_Name: inputs[0].value, Address: inputs[1].value, City: inputs[2].value, Postcode: inputs[3].value, Phone: inputs[4].value
+                })
+            });
+            const result = await response.json();
+            if (result.success) { ... }
+            */
+        } catch (error) { 
+            console.error('Checkout error:', error); alert('Could not connect to the server.'); 
+        } finally { 
+            submitBtn.innerHTML = originalBtnText; submitBtn.disabled = false; 
+        }
+    }
+    
+    updateCartUI();
+    </script>
+</body>
+</html>
