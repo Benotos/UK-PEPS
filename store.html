@@ -21,11 +21,11 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#0B0F19',
-                        surface: '#131A2A',
-                        borderline: '#1E293B',
-                        accent: '#D4AF37', /* Premium Champagne Gold */
-                        accentHover: '#FDE047'
+                        dark: '#0A0B0D',        /* near-black charcoal */
+                        surface: '#141519',     /* card surface */
+                        borderline: '#24262C',  /* subtle borders */
+                        accent: '#C7CCD1',      /* muted platinum/silver */
+                        accentHover: '#E8EBEE'  /* brighter silver on hover */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -37,12 +37,12 @@
     </script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0B0F19; }
+        body { font-family: 'Inter', sans-serif; background-color: #0A0B0D; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
         input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 30px #0B0F19 inset !important;
+            -webkit-box-shadow: 0 0 0 30px #0A0B0D inset !important;
             -webkit-text-fill-color: white !important;
             transition: background-color 5000s ease-in-out 0s;
         }
@@ -51,7 +51,7 @@
         .animate-marquee { display: flex; width: max-content; animation: marquee 15s linear infinite; }
         .animate-marquee:hover { animation-play-state: paused; }
 
-        .filter-active { background-color: #D4AF37; color: #000; border-color: #D4AF37; }
+        .filter-active { background-color: #C7CCD1; color: #000; border-color: #C7CCD1; }
     </style>
 </head>
 <body class="text-white min-h-screen relative bg-dark">
@@ -61,7 +61,7 @@
     <header class="flex justify-between items-center p-6 pt-10 max-w-5xl mx-auto border-b border-borderline">
         
         <a href="index.html" class="hover:opacity-80 transition">
-            <h1 class="text-2xl md:text-3xl font-extrabold tracking-widest uppercase font-heading leading-none">UK PEPTIDES</h1>
+            <h1 class="text-2xl md:text-3xl font-bold tracking-widest uppercase font-heading leading-none">UK PEPTIDES</h1>
             <div class="flex items-center justify-start gap-2 mt-1">
                 <div class="h-[1px] bg-gray-600 w-8"></div>
                 <span class="text-gray-400 text-[0.55rem] tracking-[0.25em] uppercase font-medium">UK PEPS</span>
@@ -109,11 +109,11 @@
             <h2 class="text-sm tracking-[0.2em] text-gray-500 font-heading uppercase font-bold">RESEARCH CATALOG</h2>
             
             <div class="flex space-x-2 overflow-x-auto no-scrollbar pb-2 md:pb-0 w-full md:w-auto">
-                <button onclick="filterProducts('all', this)" class="filter-btn filter-active border border-accent px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">All Products</button>
-                <button onclick="filterProducts('fat-loss', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Fat Loss</button>
-                <button onclick="filterProducts('healing', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Healing / Recovery</button>
-                <button onclick="filterProducts('muscle', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Muscle Building</button>
-                <button onclick="filterProducts('tanning', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Tanning</button>
+                <button onclick="filterProducts('all', this)" class="filter-btn filter-active border border-accent px-6 py-2.5 rounded-md text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">All Products</button>
+                <button onclick="filterProducts('fat-loss', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-md text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Fat Loss</button>
+                <button onclick="filterProducts('healing', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-md text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Healing / Recovery</button>
+                <button onclick="filterProducts('muscle', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-md text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Muscle Building</button>
+                <button onclick="filterProducts('tanning', this)" class="filter-btn text-gray-400 hover:text-white border border-borderline bg-surface hover:bg-borderline px-6 py-2.5 rounded-md text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Tanning</button>
             </div>
         </div>
 
@@ -123,7 +123,7 @@
             <!-- FAT LOSS SECTION               -->
             <!-- ============================== -->
             <div class="category-header w-full mt-4 mb-8" data-category="fat-loss">
-                <div class="bg-white text-black inline-block px-6 py-2 rounded font-heading font-extrabold text-xl uppercase tracking-widest shadow-lg">
+                <div class="bg-white text-black inline-block px-6 py-2 rounded-md font-heading font-bold text-xl uppercase tracking-widest shadow-lg">
                     🔥 Fat Loss & Metabolism
                 </div>
             </div>
@@ -131,7 +131,7 @@
             <!-- Tesamorelin 10mg -->
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="fat-loss">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded-md flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Tesamorelin 10mg</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Fat Loss</span>
@@ -141,12 +141,12 @@
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
                     <div class="flex items-center space-x-4 w-full justify-end">
-                        <div class="flex items-center border border-borderline bg-surface rounded">
+                        <div class="flex items-center border border-borderline bg-surface rounded-md">
                             <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
                             <span class="px-4 text-sm font-bold qty-value">1</span>
                             <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
                         </div>
-                        <button onclick="addToBasket('Tesamorelin 10mg', 30, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                        <button onclick="addToBasket('Tesamorelin 10mg', 30, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@
             <!-- Retatrutide 40mg Pen -->
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="fat-loss">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <img src="retatrutide.jpg" alt="Retatrutide 40mg Pen" class="w-24 h-24 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <img src="retatrutide.jpg" alt="Retatrutide 40mg Pen" class="w-24 h-24 object-cover border border-borderline rounded-md shrink-0 mt-1">
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Retatrutide 40mg Pen</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Fat Loss</span>
@@ -164,12 +164,12 @@
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
                     <div class="flex items-center space-x-4 w-full justify-end">
-                        <div class="flex items-center border border-borderline bg-surface rounded">
+                        <div class="flex items-center border border-borderline bg-surface rounded-md">
                             <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
                             <span class="px-4 text-sm font-bold qty-value">1</span>
                             <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
                         </div>
-                        <button onclick="addToBasket('Retatrutide 40mg Pen', 150, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                        <button onclick="addToBasket('Retatrutide 40mg Pen', 150, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
                     </div>
                 </div>
             </div>
@@ -177,7 +177,7 @@
             <!-- Retatrutide 40mg VIAL -->
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="fat-loss">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <img src="retatrutide.jpg" alt="Retatrutide 40mg Vial" class="w-24 h-24 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <img src="retatrutide.jpg" alt="Retatrutide 40mg Vial" class="w-24 h-24 object-cover border border-borderline rounded-md shrink-0 mt-1">
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Retatrutide 40mg (Vial)</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Fat Loss</span>
@@ -187,12 +187,12 @@
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
                     <div class="flex items-center space-x-4 w-full justify-end">
-                        <div class="flex items-center border border-borderline bg-surface rounded">
+                        <div class="flex items-center border border-borderline bg-surface rounded-md">
                             <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
                             <span class="px-4 text-sm font-bold qty-value">1</span>
                             <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
                         </div>
-                        <button onclick="addToBasket('Retatrutide 40mg (Vial)', 140, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                        <button onclick="addToBasket('Retatrutide 40mg (Vial)', 140, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
                     </div>
                 </div>
             </div>
@@ -200,7 +200,7 @@
             <!-- MOTS-c 40mg -->
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="fat-loss">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded-md flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">MOTS-c 40mg</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Fat Loss</span>
@@ -210,12 +210,12 @@
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
                     <div class="flex items-center space-x-4 w-full justify-end">
-                        <div class="flex items-center border border-borderline bg-surface rounded">
+                        <div class="flex items-center border border-borderline bg-surface rounded-md">
                             <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
                             <span class="px-4 text-sm font-bold qty-value">1</span>
                             <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
                         </div>
-                        <button onclick="addToBasket('MOTS-c 40mg', 35, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                        <button onclick="addToBasket('MOTS-c 40mg', 35, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
             <!-- HEALING / RECOVERY SECTION     -->
             <!-- ============================== -->
             <div class="category-header w-full mt-10 mb-8" data-category="healing">
-                <div class="bg-white text-black inline-block px-6 py-2 rounded font-heading font-extrabold text-xl uppercase tracking-widest shadow-lg">
+                <div class="bg-white text-black inline-block px-6 py-2 rounded-md font-heading font-bold text-xl uppercase tracking-widest shadow-lg">
                     🧬 Healing & Recovery
                 </div>
             </div>
@@ -232,7 +232,7 @@
             <!-- GHK-Cu 50mg Bottle -->
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="healing">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <img src="glow_ghk.jpg" alt="GHK-Cu 50mg" class="w-24 h-16 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <img src="glow_ghk.jpg" alt="GHK-Cu 50mg" class="w-24 h-16 object-cover border border-borderline rounded-md shrink-0 mt-1">
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">GHK-Cu 50mg Bottle</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Healing / Recovery</span>
@@ -242,12 +242,12 @@
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
                     <div class="flex items-center space-x-4 w-full justify-end">
-                        <div class="flex items-center border border-borderline bg-surface rounded">
+                        <div class="flex items-center border border-borderline bg-surface rounded-md">
                             <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
                             <span class="px-4 text-sm font-bold qty-value">1</span>
                             <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
                         </div>
-                        <button onclick="addToBasket('GHK-Cu 50mg', 30, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                        <button onclick="addToBasket('GHK-Cu 50mg', 30, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
                     </div>
                 </div>
             </div>
@@ -255,7 +255,7 @@
             <!-- BPC-157 10mg -->
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="healing">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded-md flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">BPC-157 10mg</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Healing / Recovery</span>
@@ -265,12 +265,12 @@
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
                     <div class="flex items-center space-x-4 w-full justify-end">
-                        <div class="flex items-center border border-borderline bg-surface rounded">
+                        <div class="flex items-center border border-borderline bg-surface rounded-md">
                             <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
                             <span class="px-4 text-sm font-bold qty-value">1</span>
                             <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
                         </div>
-                        <button onclick="addToBasket('BPC-157 10mg', 20, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                        <button onclick="addToBasket('BPC-157 10mg', 20, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
                     </div>
                 </div>
             </div>
@@ -278,7 +278,7 @@
             <!-- TB-500 (OOS) -->
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8 opacity-70" data-category="healing">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded-md flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">TB-500</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Healing / Recovery</span>
@@ -287,7 +287,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
-                    <button disabled class="bg-surface text-red-500 font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded w-full md:w-auto cursor-not-allowed border border-borderline">OUT OF STOCK (RESTOCKING)</button>
+                    <button disabled class="bg-surface text-red-500 font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md w-full md:w-auto cursor-not-allowed border border-borderline">OUT OF STOCK (RESTOCKING)</button>
                 </div>
             </div>
 
@@ -296,14 +296,14 @@
             <!-- MUSCLE BUILDING SECTION        -->
             <!-- ============================== -->
             <div class="category-header w-full mt-10 mb-8" data-category="muscle">
-                <div class="bg-white text-black inline-block px-6 py-2 rounded font-heading font-extrabold text-xl uppercase tracking-widest shadow-lg">
+                <div class="bg-white text-black inline-block px-6 py-2 rounded-md font-heading font-bold text-xl uppercase tracking-widest shadow-lg">
                     💪 Muscle Building
                 </div>
             </div>
 
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8 opacity-70" data-category="muscle">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded-md flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Ipamorelin</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Muscle Building</span>
@@ -312,13 +312,13 @@
                     </div>
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
-                    <button disabled class="bg-surface text-red-500 font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded w-full md:w-auto cursor-not-allowed border border-borderline">OUT OF STOCK (RESTOCKING)</button>
+                    <button disabled class="bg-surface text-red-500 font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md w-full md:w-auto cursor-not-allowed border border-borderline">OUT OF STOCK (RESTOCKING)</button>
                 </div>
             </div>
 
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8 opacity-70" data-category="muscle">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <div class="w-24 h-16 bg-surface border border-borderline rounded flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
+                    <div class="w-24 h-16 bg-surface border border-borderline rounded-md flex items-center justify-center text-gray-600 text-xs shrink-0 mt-1">IMG</div>
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">CJC-1295</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Muscle Building</span>
@@ -327,7 +327,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
-                    <button disabled class="bg-surface text-red-500 font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded w-full md:w-auto cursor-not-allowed border border-borderline">OUT OF STOCK (RESTOCKING)</button>
+                    <button disabled class="bg-surface text-red-500 font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md w-full md:w-auto cursor-not-allowed border border-borderline">OUT OF STOCK (RESTOCKING)</button>
                 </div>
             </div>
 
@@ -336,14 +336,14 @@
             <!-- TANNING SECTION                -->
             <!-- ============================== -->
             <div class="category-header w-full mt-10 mb-8" data-category="tanning">
-                <div class="bg-white text-black inline-block px-6 py-2 rounded font-heading font-extrabold text-xl uppercase tracking-widest shadow-lg">
+                <div class="bg-white text-black inline-block px-6 py-2 rounded-md font-heading font-bold text-xl uppercase tracking-widest shadow-lg">
                     ☀️ Tanning & Melanogenesis
                 </div>
             </div>
 
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="tanning">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <img src="mt2.jpg" alt="MT-2" class="w-24 h-16 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <img src="mt2.jpg" alt="MT-2" class="w-24 h-16 object-cover border border-borderline rounded-md shrink-0 mt-1">
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Melanotan-2 (MT-2)</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Tanning</span>
@@ -356,19 +356,19 @@
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
                     <div class="flex items-center space-x-4 w-full justify-end">
-                        <div class="flex items-center border border-borderline bg-surface rounded">
+                        <div class="flex items-center border border-borderline bg-surface rounded-md">
                             <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
                             <span class="px-4 text-sm font-bold qty-value">1</span>
                             <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
                         </div>
-                        <button onclick="addToBasket('MT-2', 39.99, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                        <button onclick="addToBasket('MT-2', 39.99, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
                     </div>
                 </div>
             </div>
 
             <div class="product-card flex flex-col md:flex-row items-center justify-between border-b border-borderline pb-8 mb-8" data-category="tanning">
                 <div class="flex items-start space-x-6 w-full md:w-auto mb-6 md:mb-0">
-                    <img src="mt2.jpg" alt="MT-2 10mg" class="w-24 h-16 object-cover border border-borderline rounded shrink-0 mt-1">
+                    <img src="mt2.jpg" alt="MT-2 10mg" class="w-24 h-16 object-cover border border-borderline rounded-md shrink-0 mt-1">
                     <div>
                         <h3 class="text-xl font-heading font-bold tracking-wide mb-1">Melanotan-2 (MT-2) 10mg</h3>
                         <span class="text-[0.6rem] font-bold tracking-widest uppercase text-accent mb-2 block">Tanning</span>
@@ -378,12 +378,12 @@
                 </div>
                 <div class="flex flex-col items-end space-y-3 w-full md:w-auto">
                     <div class="flex items-center space-x-4 w-full justify-end">
-                        <div class="flex items-center border border-borderline bg-surface rounded">
+                        <div class="flex items-center border border-borderline bg-surface rounded-md">
                             <button onclick="updateQty(this, -1)" class="px-3 py-2 hover:text-white text-gray-400 transition">−</button>
                             <span class="px-4 text-sm font-bold qty-value">1</span>
                             <button onclick="updateQty(this, 1)" class="px-3 py-2 hover:text-white text-gray-400 transition">+</button>
                         </div>
-                        <button onclick="addToBasket('MT-2 10mg', 30, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
+                        <button onclick="addToBasket('MT-2 10mg', 30, this)" class="bg-accent text-black font-heading font-bold px-6 py-2.5 text-sm tracking-widest rounded-md hover:bg-accentHover transition w-full md:w-auto">ADD TO BASKET</button>
                     </div>
                 </div>
             </div>
@@ -399,12 +399,12 @@
 
     <!-- BASKET MODAL -->
     <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm hidden z-50 flex justify-center items-start pt-10 md:pt-16 px-4 overflow-y-auto">
-        <div class="bg-surface border border-borderline w-full max-w-2xl rounded-lg shadow-2xl mb-10 overflow-hidden relative">
+        <div class="bg-surface border border-borderline w-full max-w-2xl rounded-md shadow-2xl mb-10 overflow-hidden relative">
             <button onclick="closeCartModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white font-bold text-xl transition">&times;</button>
             <div class="p-6 md:p-8">
                 <div class="flex items-center gap-3 mb-8">
                     <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    <h2 class="font-heading font-extrabold text-2xl tracking-widest uppercase text-white">BASKET</h2>
+                    <h2 class="font-heading font-bold text-2xl tracking-widest uppercase text-white">BASKET</h2>
                 </div>
                 <div id="cartItemsContainer" class="space-y-2 mb-8 min-h-[100px]"></div>
                 <div class="border-t border-borderline pt-6 mt-6">
@@ -412,7 +412,7 @@
                         <span class="font-heading font-bold text-xl tracking-widest text-gray-400 uppercase">TOTAL</span>
                         <span id="cartTotalUI" class="font-bold text-3xl text-white">£0.00</span>
                     </div>
-                    <button id="btnProceedCheckout" onclick="proceedToCheckout()" class="w-full bg-dark border border-borderline text-white py-4 rounded font-heading font-bold text-lg tracking-widest hover:bg-borderline hover:border-accent transition uppercase">CHECKOUT</button>
+                    <button id="btnProceedCheckout" onclick="proceedToCheckout()" class="w-full bg-dark border border-borderline text-white py-4 rounded-md font-heading font-bold text-lg tracking-widest hover:bg-borderline hover:border-accent transition uppercase">CHECKOUT</button>
                 </div>
             </div>
         </div>
@@ -420,7 +420,7 @@
 
     <!-- CHECKOUT MODAL -->
     <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm hidden z-50 flex justify-center items-start pt-10 md:pt-16 px-4 overflow-y-auto">
-        <div class="bg-surface border border-borderline w-full max-w-md rounded-lg shadow-2xl mb-10 overflow-hidden relative">
+        <div class="bg-surface border border-borderline w-full max-w-md rounded-md shadow-2xl mb-10 overflow-hidden relative">
             <button onclick="closeCheckout()" class="absolute top-4 right-4 text-gray-500 hover:text-white font-bold text-xl transition">&times;</button>
             <div id="checkoutFormStep" class="p-6 md:p-8">
                 <h2 class="font-heading font-bold text-2xl tracking-wide mb-2 uppercase">Secure Checkout</h2>
@@ -430,29 +430,29 @@
                     <div class="flex justify-between text-white text-lg pt-2 border-t border-borderline mt-2"><span class="font-heading font-bold tracking-wide">TOTAL</span><span id="checkoutTotal" class="font-bold text-accent">£0.00</span></div>
                 </div>
                 <form onsubmit="handleOrderSubmission(event)" class="space-y-4">
-                    <input type="text" placeholder="FULL NAME" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
-                    <input type="text" placeholder="ADDRESS" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
+                    <input type="text" placeholder="FULL NAME" required class="text-xs font-bold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded-md px-4 py-3 focus:outline-none focus:border-accent">
+                    <input type="text" placeholder="ADDRESS" required class="text-xs font-bold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded-md px-4 py-3 focus:outline-none focus:border-accent">
                     <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="CITY" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
-                        <input type="text" placeholder="POSTCODE" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
+                        <input type="text" placeholder="CITY" required class="text-xs font-bold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded-md px-4 py-3 focus:outline-none focus:border-accent">
+                        <input type="text" placeholder="POSTCODE" required class="text-xs font-bold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded-md px-4 py-3 focus:outline-none focus:border-accent">
                     </div>
-                    <input type="tel" placeholder="PHONE" required class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent">
+                    <input type="tel" placeholder="PHONE" required class="text-xs font-bold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded-md px-4 py-3 focus:outline-none focus:border-accent">
                     
-                    <select id="shippingSelect" onchange="updateShipping()" class="text-xs font-semibold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded px-4 py-3 focus:outline-none focus:border-accent cursor-pointer appearance-none">
+                    <select id="shippingSelect" onchange="updateShipping()" class="text-xs font-bold tracking-widest uppercase w-full bg-dark border border-borderline text-white rounded-md px-4 py-3 focus:outline-none focus:border-accent cursor-pointer appearance-none">
                         <option value="5">UK DOMESTIC SHIPPING - £5.00</option>
                         <option value="15">INTERNATIONAL SHIPPING - £15.00</option>
                     </select>
 
-                    <button type="submit" class="w-full bg-accent text-black py-4 rounded font-heading font-bold text-lg tracking-widest hover:bg-accentHover mt-4 transition">PLACE ORDER</button>
+                    <button type="submit" class="w-full bg-accent text-black py-4 rounded-md font-heading font-bold text-lg tracking-widest hover:bg-accentHover mt-4 transition">PLACE ORDER</button>
                 </form>
             </div>
             
             <!-- PAYMENT INTEGRATION PLACEHOLDER -->
             <div id="bankDetailsStep" class="hidden p-6 md:p-8 text-center">
-                <h3 class="text-3xl font-heading font-extrabold uppercase tracking-tight mb-2">Payment Setup</h3>
+                <h3 class="text-3xl font-heading font-bold uppercase tracking-tight mb-2">Payment Setup</h3>
                 <p class="text-sm text-gray-400 mb-8">Payment integration is currently pending configuration.</p>
                 
-                <div class="bg-dark border border-borderline p-8 rounded text-center space-y-4 mb-8">
+                <div class="bg-dark border border-borderline p-8 rounded-md text-center space-y-4 mb-8">
                     <svg class="w-12 h-12 text-accent mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
                     <h4 class="font-bold text-xl text-white">Gateway Placeholder</h4>
                     <p class="text-sm text-gray-500 leading-relaxed">This container is ready for Stripe, PayPal, or Crypto payment integration once the final site setup is complete.</p>
@@ -463,7 +463,7 @@
                     </div>
                 </div>
 
-                <button onclick="closeCheckoutAndReset()" class="w-full bg-accent text-black py-4 rounded font-heading font-bold text-lg tracking-widest hover:bg-accentHover transition uppercase">Return to Store</button>
+                <button onclick="closeCheckoutAndReset()" class="w-full bg-accent text-black py-4 rounded-md font-heading font-bold text-lg tracking-widest hover:bg-accentHover transition uppercase">Return to Store</button>
             </div>
         </div>
     </div>
